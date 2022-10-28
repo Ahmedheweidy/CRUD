@@ -1,0 +1,116 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="./css/bootstrap.min.css">
+    <link rel="stylesheet" href="./css/all.min.css">
+    <link rel="icon" href="./img/icons8-fish-64.png">
+    <link rel="stylesheet" href="./css/style.css">
+    <title>CRUD</title>
+
+</head>
+
+<body>
+
+    <head>
+        <h1 class="col-11 col-lg-10 col-md-11  m-auto text-center mt-4 mb-3 p-3 bg-info bg-opacity-75 rounded-3  ">
+            CRUD
+        </h1>
+    </head>
+
+
+    <main class=" col-12 col-md-11 col-lg-10 m-auto bg-black bg-opacity-75 text-white rounded-3 vh-100">
+        <div class="p-2 p-md-3 p-lg-5">
+            <div class="mb-3">
+                <label for="exampleInputEmail1" class="form-label">Name <i
+                        class="fa-solid ms-1 fa-signature"></i></label>
+                <input type="text" onkeyup="ValidateEmployeeName()" class="form-control" id="employeeName"
+                    placeholder="Enter the employee name....">
+                <span id="warningName" class="text-danger d-none ">The name should be at least 3 alphabets and start
+                    with capital alphabet (A-Z).</span>
+            </div>
+            <div class="mb-3">
+                <label for="exampleInputPassword1" class="form-label">Position <i
+                        class="fa-solid ms-1 fa-briefcase"></i></label>
+                <input type="text" class="form-control" onkeyup="ValidateEmployeePosition()"
+                    placeholder="Enter the employee position...." id="employeeposition">
+                <span id="warningPosition" class="text-danger d-none">The position should be at least 2
+                    alphabets.</span>
+            </div>
+            <div class="mb-3">
+                <label for="exampleInputPassword1" class="form-label">Address <i
+                        class="fa-solid ms-1 fa-map-location"></i></label>
+                <input type="text" class="form-control" onkeyup="ValidateEmployeeAddress()"
+                    placeholder="Enter the employee Address...." id="employeeAddress">
+                <span id="warningAddress" class="text-danger d-none ">The Address should be at least 4 alphabets.</span>
+            </div>
+            <div class="mb-3">
+                <label for="exampleInputPassword1" class="form-label">Phone <i
+                        class="fa-solid ms-1 fa-phone"></i></label>
+                <input type="number" class="form-control" onkeyup="ValidateEmployeePhone()"
+                    placeholder="Enter the employee Number...." id="employeePhone">
+                <span id="warningPhone" class="text-danger d-none ">Phone Number should be an Egyptian Number starting
+                    with 0(10-11-12-15) then 8 numbers.</span>
+            </div>
+
+            <button type="submit" onclick="addProduct()" id="mainBtn" class="btn btn-primary ">Submit <i
+                    class="fa-solid ms-1 fa-check ms-1"></i></button>
+            <button type="submit" onclick="updateData();" id="UpdateBtn" class="btn btn-primary d-none">Update <i
+                    class="fa-solid ms-1 fa-check ms-1"></i></button>
+
+        </div>
+
+        <section class="p-md-3  col-12 col-lg-11 m-auto ">
+            <div class="mb-3">
+
+                <label for="search" class="form-label">Search</label>
+                <input type="text" onkeyup="searchByName(this.value)" class="form-control" id="search">
+
+                <input type="checkbox" class="form-check-input mt-2 option" value="hola" oninput="filterCondtn1(event)"
+                    id="SearchByNameCheck">
+                <label class="form-check-label  me-3 mt-1" for="SearchByNameCheck"><i
+                        class="fa-solid ms-1 fa-signature"></i></label>
+
+                <input type="checkbox" class="form-check-input mt-2 option" oninput="filterCondtn1(event)" value="hola"
+                    id="SearchByPosition">
+                <label class="form-check-label me-3 mt-1" for="SearchByPosition"><i
+                        class="fa-solid ms-1 fa-briefcase"></i></label>
+
+                <input type="checkbox" class="form-check-input mt-2 option" oninput="filterCondtn1(event)" value="hola"
+                    id="SearchByAddress">
+                <label class="form-check-label me-3 mt-1" for="SearchByAddress"><i
+                        class="fa-solid ms-1 fa-map-location"></i></label>
+
+                <input type="checkbox" class="form-check-input mt-2 option" oninput="filterCondtn1(event)" value="hola"
+                    id="SearchByPhone">
+                <label class="form-check-label me-3 mt-1" for="SearchByPhone"><i
+                        class="fa-solid ms-1 fa-phone"></i></label>
+            </div>
+
+            <table class="table text-white col-12 col-md-11 col-lg-10  ">
+                <thead>
+                    <tr class="text-center text-md-start">
+                        <th class="text-start" scope="col"><i class="fa-solid ms-1 fa-arrow-down-1-9"></i></th>
+                        <th scope="col">Name <i class="fa-solid ms-1 fa-signature"></i></th>
+                        <th scope="col">position <i class="fa-solid ms-1 fa-briefcase"></i></th>
+                        <th scope="col">Address <i class="fa-solid ms-1 fa-map-location"></i></th>
+                        <th scope="col">Phone <i class="fa-solid ms-1 fa-phone"></i></th>
+
+                    </tr>
+                </thead>
+                <tbody id="myData" class="table-group-divider text-center  text-md-start">
+
+                </tbody>
+            </table>
+        </section>
+    </main>
+
+
+    <script src="./JS/bootstrap.min.js"></script>
+    <script src="./JS/main.js"></script>
+</body>
+
+</html>

@@ -1,0 +1,30 @@
+body {
+    background-image: url(../img/lycs-architecture-U2BI3GMnSSE-unsplash.jpg);
+    background-size: cover;
+}
+
+
+
+
+@media screen and (max-width: 902px) {
+    .mediaq {
+        display: none;
+    }
+
+    body {
+        background-size:cover;
+
+    }
+
+    .mediaqS {
+        flex-direction: row;
+        margin-left: 5px;
+    }
+}
+
+
+@media screen and (min-width: 902px) {
+    .mediaqS {
+        display: none;
+    }
+}
